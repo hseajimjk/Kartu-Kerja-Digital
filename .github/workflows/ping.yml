@@ -14,4 +14,4 @@ jobs:
         run: |
           curl -X GET "https://cqhvcswgisosqpamyhrx.supabase.co/rest/v1/ping" \
           -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxaHZjc3dnaXNvc3FwYW15aHJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDg2NDAsImV4cCI6MjA4ODc4NDY0MH0.4obN4PCO7JHa3iURi_E17U3PoU2fuvJWUTaKH0_65g0" \
-          -H "Authorization: Bearer YOUR_API_KEY"
+          -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxaHZjc3dnaXNvc3FwYW15aHJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDg2NDAsImV4cCI6MjA4ODc4NDY0MH0.4obN4PCO7JHa3iURi_E17U3PoU2fuvJWUTaKH0_65g0"
