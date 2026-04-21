@@ -1,8 +1,8 @@
-name: Ping Supabase
+name: Keep Supabase Alive
 
 on:
   schedule:
-    - cron: "0 0 * * *"
+    - cron: "*/30 * * * *"   # setiap 30 menit
   workflow_dispatch:
 
 jobs:
@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Ping Supabase
+      - name: Ping Supabase (Keepalive)
         run: |
-          curl -X GET "https://cqhvcswgisosqpamyhrx.supabase.co/rest/v1/ping" \
-          -H "apikey: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxaHZjc3dnaXNvc3FwYW15aHJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDg2NDAsImV4cCI6MjA4ODc4NDY0MH0.4obN4PCO7JHa3iURi_E17U3PoU2fuvJWUTaKH0_65g0" \
-          -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImNxaHZjc3dnaXNvc3FwYW15aHJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMyMDg2NDAsImV4cCI6MjA4ODc4NDY0MH0.4obN4PCO7JHa3iURi_E17U3PoU2fuvJWUTaKH0_65g0"
+          curl -s -X GET "${{ secrets.SUPABASE_URL }}/rest/v1/keepalive?select=id&limit=1" \
+          -H "apikey: ${{ secrets.SUPABASE_KEY }}" \
+          -H "Authorization: Bearer ${{ secrets.SUPABASE_KEY }}"
